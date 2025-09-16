@@ -26,9 +26,9 @@ The bindings work with input images represented as numpy arrays::
 
     # Iterate over path curves
     for curve in path:
-        print "start_point =", curve.start_point
+        print("start_point =", curve.start_point)
         for segment in curve:
-            print segment
+            print(segment)
             end_point_x, end_point_y = segment.end_point
             if segment.is_corner:
                 c_x, c_y = segment.c
@@ -50,7 +50,7 @@ Install pypotrace::
 
     $ git clone https://github.com/flupke/pypotrace.git
     $ cd pypotrace
-    $ pip install numpy
+    $ pip install numpy>=2.0.0
     $ pip install .
 
 CentOS/RedHat
@@ -65,7 +65,7 @@ Install pypotrace::
 
     $ git clone https://github.com/flupke/pypotrace.git
     $ cd pypotrace
-    $ pip install numpy
+    $ pip install numpy>=2.0.0
     $ pip install .
 
 OSX
@@ -79,7 +79,7 @@ Install pypotrace::
 
     $ git clone https://github.com/flupke/pypotrace.git
     $ cd pypotrace
-    $ pip install numpy
+    $ pip install numpy>=2.0.0
     $ pip install .
 
 Windows
@@ -146,6 +146,20 @@ Finally install the package::
     byte-compiling C:\Python27\Lib\site-packages\potrace\__init__.py to __init__.pyc
     running install_egg_info
     Writing C:\Python27\Lib\site-packages\pypotrace-0.1-py2.7.egg-info
+
+NumPy 2.0 Compatibility
+-----------------------
+
+This package has been updated to support NumPy 2.0. If you're upgrading from NumPy 1.x, follow these steps:
+
+**For Poetry users:**
+
+1. Make sure you have NumPy 2.x.x version. 
+
+2. Build and install:
+
+    $ poetry build
+    $ pip install dist/potrace-*.whl --force-reinstall
 
 Running tests
 -------------

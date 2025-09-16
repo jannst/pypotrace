@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "potrace"
-version = "0.3"
+version = "0.4"
 description = "potrace Python bindings"
 readme = "README.rst"
 authors = ["Luper Rouch <luper.rouch@gmail.com>"]
@@ -30,8 +30,8 @@ script = "build.py"
 generate-setup-file = true
 
 [tool.poetry.dependencies]
-python = "*"
-numpy = "*"
+python = ">=3.9"
+numpy = "^2.0.0"
 
 [tool.poetry.dev-dependencies]
 Cython = "*"

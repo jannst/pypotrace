@@ -5,6 +5,7 @@ from potrace.bezier cimport adaptive_bezier, bezier
 
 
 import numpy as np
+np.import_array()
 
 cdef extern from "stdbool.h":
     ctypedef unsigned short bool

@@ -17,8 +17,8 @@ cdef np.ndarray bezier(np.ndarray p_, int steps=30):
     """
     cdef double t = 1.0 / steps
     cdef double temp = t * t
-    cdef np.ndarray[np.double_t, ndim=2] p=p_, points
-    cdef np.ndarray[np.double_t, ndim=1] f, fd, fdd_per_2, fddd_per_2, fddd, \
+    cdef np.ndarray[np.float64_t, ndim=2] p=p_, points
+    cdef np.ndarray[np.float64_t, ndim=1] f, fd, fdd_per_2, fddd_per_2, fddd, \
             fdd, fddd_per_6
     
     f = p[0].copy()
@@ -46,7 +46,7 @@ cdef np.ndarray adaptive_bezier(np.ndarray p):
     Tesselate a bezier curve adaptively
     """
     cdef agg.curve4_div *curve
-    cdef np.ndarray[np.double_t, ndim=2] points
+    cdef np.ndarray[np.float64_t, ndim=2] points
     cdef int i, num_vertices
     curve = agg.new_curve4_div(p[0][0], p[0][1],
             p[1][0], p[1][1],
